@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Maklumat Pemohon</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div [formGroup]="ladangForm" novalidate class="basic-container">
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input readonly matInput placeholder="Id" formControlName="id">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Nama" formControlName="nama">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Kategori" formControlName="Kategori">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Telefon" formControlName="telefon">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="onSubmit()" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

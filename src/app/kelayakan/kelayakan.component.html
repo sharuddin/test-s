@@ -1,0 +1,50 @@
+
+
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Sila isi nama anda</ng-template>
+      <mat-form-field>
+        <mat-label>Nama</mat-label>
+        <input matInput formControlName="firstCtrl" placeholder="Nama Penuh" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Seterusnya</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Sila isi nama jabatan anda</ng-template>
+      <mat-form-field>
+        <mat-label>Jabatan</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Nama jabatan anda"required>
+        </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Kembali</button>
+        <button mat-button matStepperNext>Seterusnya</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]= "thirdFormGroup" [editable]="isEditable">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel> Sila ini nama jawatan anda</ng-template>
+        <mat-form-field>
+            <mat-label>Jawatan</mat-label>
+            <input matInput formControlName= "thirdCtrl" placeholder="Nama jawatan anda"required>
+        </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Kembali</button>
+        <button mat-button matStepperNext>Seterusnya</button>
+      </div>
+      </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Tamat</ng-template>
+    <p>Selesai</p>
+    <div>
+      <button mat-button matStepperPrevious>Kembali</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

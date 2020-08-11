@@ -1,0 +1,55 @@
+<div class="basic-container mat-elevation-z8">
+  <div fxLayout="row">
+    <div fxFlex="70%">
+      <h1>Direktori Hospital/Klinik</h1>
+    </div>
+    <div fxFlex="30%" class="add-button">
+      <button mat-icon-button (click)="editDirektori()">
+        <mat-icon>add_box_outline</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-form-field>
+    <input matInput placeholder="Cari" #input>
+  </mat-form-field>
+
+  <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <mat-table class="full-width-table mat-elevation-z8" [dataSource]="dataSource" matSort matSortActive="negeri"
+    matSortDirection="asc" matSortDisableClear>
+
+    <ng-container matColumnDef="negeri">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Negeri</mat-header-cell>
+      <mat-cell class="duration-cell" *matCellDef="let direktori">{{direktori.negeri}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Bandar">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Bandar</mat-header-cell>
+      <mat-cell class="duration-cell" *matCellDef="let direktori">{{direktori.Bandar}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Hospital">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Hospital</mat-header-cell>
+      <mat-cell class="duration-cell" *matCellDef="let direktori">{{direktori.Hospital}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Klinik">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Klinik</mat-header-cell>
+      <mat-cell class="duration-cell" *matCellDef="let direktori">{{direktori.Klinik}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+      <mat-cell class="duration-cell" *matCellDef="let direktori">
+        <button mat-icon-button (click)="editDirektori(direktori)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        </mat-cell></ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 50, 100]"></mat-paginator>
+</div>

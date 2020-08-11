@@ -1,0 +1,30 @@
+.sidenav-container {
+  height: 100%;
+  background: rgb(95, 111, 248);
+}
+
+.sidenav {
+  width: 200px;
+  background: rgb(95, 111, 248);
+}
+
+.sidenav .mat-toolbar {
+  background: rgb(7, 74, 175);
+
+}
+
+.mat-toolbar.mat-primary {
+  background-color: rgb(7, 74, 175);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+}
+
+.mat-stepper-horizontal {
+  margin-top: 10px;
+}
+
+.mat-form-field {
+  margin-top: 20px;
+}
